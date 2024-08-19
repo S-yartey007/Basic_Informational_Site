@@ -3,14 +3,16 @@ import 'dotenv/config.js'
 import url from 'url';
 import path from 'path';
 import fs from 'fs/promises';
+import express from "express";
+const app = express();
 
 const port = process.env.PORT;
 
 //get the filepath
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-const server = http.createServer( async(req,res) => {
+let filepath;
+/* const server = http.createServer( async(req,res) => {
     
     try {
         if(req.method === 'GET') {
@@ -49,4 +51,26 @@ const server = http.createServer( async(req,res) => {
 
 server.listen(port,() => {
     console.log(`Server running at:${port}`);
+}) */
+
+app.get("/",  (req,res) => {
+   filepath = path.join(__dirname,'index.html')
+    res.sendFile(filepath)
 })
+
+app.get("/about",(req,res) => {
+    filepath = path.join(__dirname,'about.html')
+    res.sendFile(filepath)
+})
+
+app.get("/contact-me.html",(req,res) => {
+    filepath = path.join(__dirname,"contact-me.html")
+    res.sendFile(filepath)
+})
+
+app.get("*",(req,res) => {
+    filepath = path.join(__dirname,"404.html")
+    res.sendFile(filepath);
+})
+
+app.listen(port,() => console.log(`Express running at port: ${port}`))
