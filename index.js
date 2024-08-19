@@ -58,7 +58,7 @@ app.get("/",  (req,res) => {
     res.sendFile(filepath)
 })
 
-app.get("/about",(req,res) => {
+/* app.get("/about",(req,res) => {
     filepath = path.join(__dirname,'about.html')
     res.sendFile(filepath)
 })
@@ -71,6 +71,6 @@ app.get("/contact-me",(req,res) => {
 app.get("*",(req,res) => {
     filepath = path.join(__dirname,"404.html")
     res.sendFile(filepath);
-})
+}) */
 
 app.listen(port,() => console.log(`Express running at port: ${port}`))
