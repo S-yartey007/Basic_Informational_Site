@@ -63,7 +63,7 @@ app.get("/about",(req,res) => {
     res.sendFile(filepath)
 })
 
-app.get("/contact-me.html",(req,res) => {
+app.get("/contact-me",(req,res) => {
     filepath = path.join(__dirname,"contact-me.html")
     res.sendFile(filepath)
 })
