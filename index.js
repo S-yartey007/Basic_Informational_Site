@@ -53,12 +53,12 @@ server.listen(port,() => {
     console.log(`Server running at:${port}`);
 }) */
 
-app.get("/",  (req,res) => {
+app.get("/about",  (req,res) => {
    filepath = path.join(__dirname,'index.html')
     res.sendFile(filepath)
 })
 
-app.get("/about",(req,res) => {
+app.get("/",(req,res) => {
     filepath = path.join(__dirname,'about.html')
     res.sendFile(filepath)
 })
