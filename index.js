@@ -58,11 +58,11 @@ app.get("/",  (req,res) => {
     res.sendFile(filepath)
 })
 
-/* app.get("/about",(req,res) => {
+app.get("/about",(req,res) => {
     filepath = path.join(__dirname,'about.html')
     res.sendFile(filepath)
 })
-
+/*
 app.get("/contact-me",(req,res) => {
     filepath = path.join(__dirname,"contact-me.html")
     res.sendFile(filepath)
