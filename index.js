@@ -53,16 +53,16 @@ server.listen(port,() => {
     console.log(`Server running at:${port}`);
 }) */
 
-app.get("/about",  (req,res) => {
+app.get("/",  (req,res) => {
    filepath = path.join(__dirname,'index.html')
     res.sendFile(filepath)
 })
 
-app.get("/",(req,res) => {
+app.get("/about",(req,res) => {
     filepath = path.join(__dirname,'about.html')
     res.sendFile(filepath)
 })
-/*
+
 app.get("/contact-me",(req,res) => {
     filepath = path.join(__dirname,"contact-me.html")
     res.sendFile(filepath)
@@ -71,6 +71,6 @@ app.get("/contact-me",(req,res) => {
 app.get("*",(req,res) => {
     filepath = path.join(__dirname,"404.html")
     res.sendFile(filepath);
-}) */
+})
 
 app.listen(port,() => console.log(`Express running at port: ${port}`))
